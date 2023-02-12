@@ -8,3 +8,5 @@ abstract class NewsSourcer {
   Future<List<NewsItem>> getNews();
 
 }
+
+class NetworkException implements Exception {}

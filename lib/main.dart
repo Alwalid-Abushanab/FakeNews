@@ -1,19 +1,13 @@
+import 'package:a1_fakenews/news_observer.dart';
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
+import 'news_app.dart';
+
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      home: const Text("Assignment 1")
-    );
-  }
+  BlocOverrides.runZoned(
+        () => runApp( NewsApp()),
+    blocObserver: NewsObserver(),
+  );
 }
 
